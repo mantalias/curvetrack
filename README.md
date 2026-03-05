@@ -26,10 +26,10 @@ Features
 
 Roadmap
 --
-[x] G-Force logging
-[x] Writing data on MicroSD (timestamps inlcuding G-Forces)
-[] Implement GPS module (NEO-M8N probably) 
-[] Automatic lap tracker with an LCD screen showing lap time
-[] Python app to visualize traction circle using G-G diagram and provide the driver with full lap data
-[] Learn more about code optimization and optimize my code to get even more accurate data
-[] Whatever else seems interesting/useful to add!
+- [x] G-Force logging
+- [x] Writing data on MicroSD (timestamps including G-Forces)
+- [ ] Implement GPS module (NEO-M8N probably) 
+- [ ] Automatic lap tracker with an LCD screen showing lap time
+- [ ] Python app to visualize traction circle using G-G diagram and provide the driver with full lap data
+- [ ] Learn more about code optimization and optimize my code to get even more accurate data
+- [ ] Whatever else seems interesting/useful to add!
