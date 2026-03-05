@@ -62,6 +62,8 @@ void loop() {
 }
 
 void calibrate(){
+    myFile.println("**CALIBRATION STARTED**");
+    myFile.close();
     Serial.println("Calibrating...");
     long sumX = 0, sumY = 0, sumZ = 0;
     int samples = 300;
@@ -78,25 +80,21 @@ void calibrate(){
     offsetY = (float)sumY / samples;
     offsetZ = ((float)sumZ / samples) - 16384; 
 
-    File calLog = SD.open("/calibration.txt", FILE_APPEND);
-
-    if (calLog) {
-        calLog.println("calibrated 1 time");
-        calLog.close();
-        Serial.println("Calibration logged.");
-    }
+    myFile = SD.open("/sensorlog.txt", FILE_APPEND);
+    myFile.println("**CALIBRATION FINISHED**");
+    myFile.flush();
+    Serial.println("Calibration finished!");
+    
 }
 
 void write_logs(const float &gX, const float &gY, const float &gZ){
     static int counter = 0;
     if (myFile) {
-        myFile.print(millis()/1000.0, 3);
-        myFile.print(", ");
-        myFile.print(gX, 3);
-        myFile.print(", ");
-        myFile.print(gY, 3);
-        myFile.print(", ");
-        myFile.println(gZ, 3);
+        char buffer[64];
+        float timestamp = millis()/1000.0;
+        snprintf(buffer, sizeof(buffer), "%.3f, %.3f, %.3f, %.3f\n", timestamp, gX, gY, gZ);
+        myFile.print(buffer);
+
         counter = counter + 1;
 
         if(counter == 100){
