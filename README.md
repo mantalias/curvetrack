@@ -5,7 +5,7 @@
 
 Description
 --
-  Right now the project is in development stage, it only logs timestamps and g-forces on MicroSD card but GPS coordinates will be added later along with a user-friendly Python GUI that analyzes the data logged using the ESP32 to show the driver the exact layout of his drive using GPS, lap time, corner entry speed, corner exit speed and a G-G diagram to aid in trail-braking effectively.
+  Right now the project is in development stage, it only logs timestamps and g-forces on MicroSD card but GPS coordinates will be added later along with a user-friendly Python GUI that analyzes the data logged using the ESP32 to show the driver: the exact layout of his drive using GPS, lap time, corner entry speed, corner exit speed and a G-G diagram to aid in trail-braking effectively.
 
 Architecture
 --
